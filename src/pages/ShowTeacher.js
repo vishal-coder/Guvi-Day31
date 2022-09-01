@@ -9,7 +9,6 @@ function ShowTeacher() {
     useContext(AppContext);
   const navigate = useNavigate();
 
-  console.log("teacherlis is", teacherstList);
   useEffect(() => getTeacherDetails(), []);
   return (
     <div>

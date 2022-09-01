@@ -33,7 +33,6 @@ function AddTeacher() {
     };
 
     const response = await addTeacher(newTeacher);
-    console.log("add teacher response", response);
     if (response.status == 201 || response.status == 200) {
       alert("teacher added successfully");
     }

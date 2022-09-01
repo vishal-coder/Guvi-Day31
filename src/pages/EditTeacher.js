@@ -6,11 +6,9 @@ import Form from "react-bootstrap/Form";
 
 function EditTeacher() {
   const { id } = useParams();
-  console.log("teacher id is", id);
   const { getTeacher, teacher } = useContext(AppContext);
 
   useEffect(() => getTeacher(id), []);
-  console.log("student id student", teacher);
 
   return teacher ? <EditTeacherForm teacher={teacher} /> : "Loading...";
 }
@@ -52,7 +50,6 @@ function EditTeacherForm({ teacher }) {
         headers: { "Content-Type": "application/json" },
       }
     );
-    console.log("add teacher response", response);
     if (response.status == 201 || response.status == 200) {
       alert("teacher edited successfully");
     }

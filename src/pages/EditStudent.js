@@ -5,16 +5,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 function EditStudent() {
   const { id } = useParams();
-  console.log("student id is", id);
   const { getStudent, student } = useContext(AppContext);
 
   useEffect(() => getStudent(id), []);
-  console.log("student id student", student);
 
   return student ? <EditStudentForm student={student} /> : "Loading...";
 }
 function EditStudentForm({ student }) {
-  console.log("edit form studetn is", student);
   const [name, setName] = useState(student.name);
   const [classname, setClassName] = useState(student.classname);
   const [branch, setBranch] = useState(student.branch);
@@ -50,7 +47,6 @@ function EditStudentForm({ student }) {
         headers: { "Content-Type": "application/json" },
       }
     );
-    console.log("add student response", response);
     if (response.status == 201 || response.status == 200) {
       alert("student edited successfully");
     }

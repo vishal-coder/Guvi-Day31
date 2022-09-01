@@ -33,7 +33,6 @@ function AddStudent() {
     };
 
     const response = await addStudent(newStudent);
-    console.log("add student response", response);
     if (response.status == 201 || response.status == 200) {
       alert("student added successfully");
     }

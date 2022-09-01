@@ -9,7 +9,6 @@ function ShowStudent() {
     useContext(AppContext);
   const navigate = useNavigate();
 
-  console.log("studentList is", studentList);
   useEffect(() => getStudentDetails(), []);
   return (
     <div>
